@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs'
-import User from '../modules/User.js'
+import User from '../models/User.js'
 import jwt from 'jsonwebtoken'
 
 // Register user (req - from front to back \\ res from back to front)
@@ -22,6 +22,14 @@ export const register = async (req, res) => {
             username,
             password: hash,
         })
+
+        const token = jwt.sign (
+            {
+                id: newUser._id,
+            },
+            process.env.JWT_SECRET,
+            { expiresIn: '30d'}
+        )
 
         await newUser.save()
 
