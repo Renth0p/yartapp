@@ -11,3 +11,6 @@ Mongoose        | DataBase in Project
 React.js        | Front-end
 TailwindCss     | CSS Framework
 Redux           | Connect Back and Front
+
+Так-же было задействовано множество других маленьких библиотек в проекте, но в таблицу я их не вносил.
+
